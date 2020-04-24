@@ -1,0 +1,60 @@
+<?php
+include('header.php');
+#DO NOT CHANGE THE KEY! RAO WILL BE DISPLEASED
+$key = "4v2676craytxdzh9kx6mbslfi66709hlx4q96cymi4v8y2liqygt3kqnzwuroqq7";
+$REAL_PASS = password_hash(hash_hmac("sha256", base64_encode(str_repeat('Freedom', 3)), $key, true),PASSWORD_BCRYPT);
+
+#Added by Censor43111 in approval of Rao's Directive on illegal keywords.
+if (isset($_GET['x'])){
+if ($_GET['x'] === 'Freedom'){
+print "<div class='alert alert-danger'><strong>This is banned by Our Dear Leader<strong><br><center>";
+print "<img src='dear_leader.png' /></div>";
+die();
+}
+$y = $_GET['x'];
+if (password_verify(hash_hmac("sha256", base64_encode(str_repeat($y,3)), $key, true),$REAL_PASS)) { ?>
+<script>
+
+function doX(){
+alert('THIS FLAG IS CENSORED BY RAO');
+}
+</script>
+<div class="alert alert-danger">
+	Welcome. 
+
+	Freedom Firewall is also protecting this website http://mettrelurlaarteu.com </div>
+<div class='row'>
+	<div class='col-md-3'>
+	</div><div class='col-md-6'>
+		<form>
+		<div class="form-group">
+			<label>Hackivist Monitoring is currently :</label>
+			<div class="checkbox">
+				 <input id='chk' type="checkbox" checked data-toggle="toggle">
+				</div>
+			<button onClick='doX()'>Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
+</div><div class='col-md-3'/></div>
+<?php
+} else {
+echo '<div class="alert alert-danger">Bad password, this will be reported</div>';
+error_log($_SERVER['REMOTE_ADDR']." Authentication failure for user FreedomFirewall");
+}
+} else { ?> 
+<span class="label"><h1>This page has been seized for use of <blink><b>illegal</b></blink> keywords</h1></span><center>
+
+To log in, please enter the password<br/>
+<form class="form-group" method='get' action='index.php'>
+<label>Password</label><input id='x' type='password' name='x' /> <br>
+<button class='btn btn-primary' type='Submit' value='Login' >Login </button></form></body></html>
+
+<?php
+}
+
+function do_hashing($x){
+return hash_hmac($x);
+}
+?>
