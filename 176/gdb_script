@@ -1,0 +1,5 @@
+break __libc_csu_ctor
+run
+nexti 7
+set $al=0xcc
+continue
