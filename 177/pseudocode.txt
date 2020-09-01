@@ -1,0 +1,84 @@
+initial key:
+7040737357307264 "p@ssW0rd"
+
+ciphertext:
+57cc7f72481d517de75181991e57a1cae9053509f94565f8bedede6c3d8cd7484457c8e215e70000
+
+
+break1
+
+break2
+
+  if arg2 == "A":
+    key[2] = "A"
+  else:
+    key[3] = ord(arg3)
+
+break3
+
+  n = int(arg1)
+  for (i = n; i < 9; i++)
+    add 2 to first char of arg(i)
+
+break4
+
+  if i < 1:
+    key[1] = 0x01 # unreachable?
+  else:
+    key[1] = 0x02
+
+break5
+
+  ?? key[3] = ord(arg3) ??
+
+break6
+
+  if ord(arg3) + ord(arg4) + ord(arg5) == 0xec:
+    key[4] = ord(arg4)
+
+break7
+
+  if arg5 == "3":
+    key[7] = arg7
+  else:
+    key[5] = arg3
+
+break8
+
+  if 14 arguments:
+    key[2] = 0x15
+
+break9
+
+  key[3] = ord(arg3)
+
+break10
+
+  n = int(arg9)
+  if n == 54616:
+    key[6] = 0x58
+  elif n == 34622:
+    key[6] = 0x3e
+
+break11
+
+  key[0] = ord(arg10) ^ 0xde
+
+break12
+
+
+
+key bytes:
+key[0] -> completely controllable = org(arg10) ^ 0xde
+key[1] -> 0x02
+key[2] -> 0x73 (default) or 0x41 or 0x15
+key[3] -> completely controllable = ord(arg3)
+key[4] -> completely controllable if sum is correct = ord(arg4)
+key[5] -> completely controllable (alternately with 7) = ord(arg3) else 0x30
+key[6] -> 0x72 (default) or 0x58 or 0x3e
+key[7] -> completely controllable (alternately with 5) = ord(arg7) else 0x64
+
+Final solution:
+
+$ LD_LIBRARY_PATH=/usr/local/ssl/lib ./ArmedAndReady 9 A L V J unused anything unused 54616 Z
+Decrypted text	 : FLAG-1f7mpl82B99hM21f0p4P44425656109v

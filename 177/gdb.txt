@@ -1,0 +1,37 @@
+handle SIGILL nostop
+break *(0x87a0)
+break *(0x888c)
+break *(0x88cc)
+break *(0x8940)
+break *(0x8968)
+break *(0x89ac)
+break *(0x89d8)
+break *(0x8a10)
+break *(0x8a1c)
+break *(0x8a2c)
+break *(0x8ac8)
+break *(0x8ad0)
+run
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
+c
+x/8xb $r11-40
