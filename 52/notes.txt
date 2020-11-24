@@ -1,0 +1,15 @@
+!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+--> illegal characters detected
+
+not illegal:
+<space>
+0123456789
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+!"$%&'()*+,-./:<>?@[\]^_`{|}~
+
+illegal:
+#;=
+
+solution:
+' OR 1<2 OR '
